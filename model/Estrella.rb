@@ -1,0 +1,3 @@
+class Estrella < ObjetoEspacial
+
+end
