@@ -1,0 +1,3 @@
+class Bomba < ObjetoEspacial
+
+end
