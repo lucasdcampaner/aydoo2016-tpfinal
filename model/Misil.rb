@@ -1,0 +1,3 @@
+class Misil < ObjetoEspacial
+
+end
