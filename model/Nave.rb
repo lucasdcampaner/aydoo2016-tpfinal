@@ -17,9 +17,9 @@ class Nave
 
   def chocar(objeto_espacial)
 
-    nave_antes_de_chocar = Nave.new(self.vida, self.masa)
+    este_objeto_espacial_antes_de_chocar = (self.class).new(self.vida, self.masa)
     @choques_posibles[objeto_espacial.class].afectar_objeto(self, objeto_espacial)
-    objeto_espacial.actualizar_por_choque(nave_antes_de_chocar)
+    objeto_espacial.actualizar_por_choque(este_objeto_espacial_antes_de_chocar)
   end
 
   def actualizar_por_choque(objeto_espacial)
