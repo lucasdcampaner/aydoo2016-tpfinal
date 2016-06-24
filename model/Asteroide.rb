@@ -9,6 +9,7 @@ class Asteroide
   @choques_posibles
 
   def initialize(vida, masa)     
+    
     @vida = vida    
     @masa = masa
     @choques_posibles = Hash.new

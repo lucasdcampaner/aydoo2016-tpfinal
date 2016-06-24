@@ -1,4 +1,5 @@
 require_relative '../model/EfectoDisminuirMasa'
+require_relative '../model/EfectoDisminuirVida'
 
 class Nave
 
@@ -9,9 +10,11 @@ class Nave
   @choques_posibles
 
   def initialize(vida, masa)     
+    
     @vida = vida    
     @masa = masa
     @choques_posibles = Hash.new
+    @choques_posibles[Nave] = EfectoDisminuirVida.new(100)
     @choques_posibles[Asteroide] = EfectoDisminuirMasa.new(50)
   end
 

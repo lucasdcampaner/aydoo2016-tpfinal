@@ -5,15 +5,15 @@ describe 'Asteroide' do
 
   it 'deberia crear un asteroide con 50 unidades de vida y 100 unidades de masa' do
     
-    vidaEsperada = 50
-    masaEsperada = 100
-    asteroide = Asteroide.new(vidaEsperada, masaEsperada) 
+    vida_esperada = 50
+    masa_esperada = 100
+    asteroide = Asteroide.new(vida_esperada, masa_esperada) 
     
-    vidaObtenida = asteroide.vida
-    masaObtenida = asteroide.masa    
+    vida_obtenida = asteroide.vida
+    masa_obtenida = asteroide.masa    
 
-    expect(vidaObtenida).to eq vidaEsperada
-    expect(masaObtenida).to eq masaEsperada
+    expect(vida_obtenida).to eq vida_esperada
+    expect(masa_obtenida).to eq masa_esperada
   end
 
 end

@@ -5,15 +5,15 @@ describe 'Nave' do
 
   it 'deberia crear una nave con 100 unidades de vida y 100 unidades de masa' do
     
-    vidaEsperada = 100
-    masaEsperada = 100
-    nave = Nave.new(vidaEsperada, masaEsperada) 
+    vida_esperada = 100
+    masa_esperada = 100
+    nave = Nave.new(vida_esperada, masa_esperada) 
     
-    vidaObtenida = nave.vida
-    masaObtenida = nave.masa    
+    vida_obtenida = nave.vida
+    masa_obtenida = nave.masa    
 
-    expect(vidaObtenida).to eq vidaEsperada
-    expect(masaObtenida).to eq masaEsperada
+    expect(vida_obtenida).to eq vida_esperada
+    expect(masa_obtenida).to eq masa_esperada
   end
 
 end
