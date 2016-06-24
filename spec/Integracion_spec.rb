@@ -1,6 +1,7 @@
 require 'rspec' 
 require_relative '../model/Nave'
 require_relative '../model/Asteroide'
+require_relative '../model/Estrella'
 
 describe 'Distintos tipos de choque' do
 
@@ -78,6 +79,32 @@ describe 'Distintos tipos de choque' do
     expect(masa_nave_obtenida).to eq masa_nave_esperada
     expect(vida_asteroide_obtenida).to eq vida_asteroide_esperada
     expect(masa_asteroide_obtenida).to eq masa_asteroide_esperada    
+  end
+
+  it 'Nave con estrella: la nave aumenta su masa a 150 unidades y la estrella la disminuye a 0' do
+    
+    vida_nave = 100
+    masa_nave = 100
+    nave = Nave.new(vida_nave, masa_nave) 
+    vida_estrella = 50
+    masa_estrella = 100
+    estrella = Estrella.new(vida_estrella, masa_estrella) 
+    vida_nave_esperada = 150
+    masa_nave_esperada = 100
+    vida_estrella_esperada = 0
+    masa_estrella_esperada = 100
+
+    nave.chocar(estrella)
+    
+    vida_nave_obtenida = nave.vida
+    masa_nave_obtenida = nave.masa    
+    vida_estrella_obtenida = estrella.vida
+    masa_estrella_obtenida = estrella.masa    
+
+    expect(vida_nave_obtenida).to eq vida_nave_esperada
+    expect(masa_nave_obtenida).to eq masa_nave_esperada
+    expect(vida_estrella_obtenida).to eq vida_estrella_esperada
+    expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
   end
 
 end
