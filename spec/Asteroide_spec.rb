@@ -1,5 +1,4 @@
 require 'rspec' 
-require_relative '../model/ObjetoEspacial'
 require_relative '../model/Asteroide'
 
 describe 'Asteroide' do
@@ -13,8 +12,8 @@ describe 'Asteroide' do
     vidaObtenida = asteroide.vida
     masaObtenida = asteroide.masa    
 
-    expect(vidaEsperada).to eq vidaObtenida
-    expect(masaEsperada).to eq masaObtenida
+    expect(vidaObtenida).to eq vidaEsperada
+    expect(masaObtenida).to eq masaEsperada
   end
 
 end
