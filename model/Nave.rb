@@ -15,14 +15,15 @@ class Nave
     @choques_posibles[Asteroide] = EfectoDisminuirMasa.new(50)
   end
 
-  def chocar(objetoEspacial)
+  def chocar(objeto_espacial)
 
-    @choques_posibles[objetoEspacial.class].afectar_objeto(self, objetoEspacial)
-    notificarChoque(objetoEspacial)
+    nave_antes_de_chocar = Nave.new(self.vida, self.masa)
+    @choques_posibles[objeto_espacial.class].afectar_objeto(self, objeto_espacial)
+    objeto_espacial.actualizar_por_choque(nave_antes_de_chocar)
   end
 
-  def notificarChoque(objetoEspacial)
-    #Utilizar el observador.
+  def actualizar_por_choque(objeto_espacial)
+    @choques_posibles[objeto_espacial.class].afectar_objeto(self, objeto_espacial)
   end
 
 end
