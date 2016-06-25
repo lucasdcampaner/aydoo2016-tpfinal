@@ -1,4 +1,6 @@
 require_relative '../model/EfectoDisminuirVida'
+require_relative '../model/EfectoDisminuirVidaPorPorcentaje'
+require_relative '../model/EfectoNulo'
 
 class Misil
 
@@ -15,6 +17,7 @@ class Misil
     @choques_posibles = Hash.new
     @choques_posibles[Nave] = EfectoDisminuirVida.new(100)
     @choques_posibles[Misil] = EfectoDisminuirVida.new(100)
+    @choques_posibles[Bomba] = EfectoNulo.new()
   end
 
   def chocar(objeto_espacial)
