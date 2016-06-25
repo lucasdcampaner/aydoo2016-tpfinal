@@ -4,6 +4,7 @@ class ObjetoEspacial
 
   @vida
   @masa
+  @esta_vivo
   @choques_posibles
 
   def initialize()     
@@ -35,6 +36,15 @@ class ObjetoEspacial
   def eliminar_choque_posible(objeto_espacial)
     if @choques_posibles.include? objeto_espacial
       @choques_posibles.delete(objeto_espacial)
+    end
+  end
+
+  def esta_vivo?
+    
+    if @vida != 0 && @masa != 0
+      @esta_vivo = true
+    else
+      @esta_vivo = false
     end
   end
 
