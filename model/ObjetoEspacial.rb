@@ -6,6 +6,14 @@ class ObjetoEspacial
   @masa
   @choques_posibles
 
+  def initialize()     
+    
+    vida = 100
+    masa = 100
+    @vida = vida    
+    @masa = masa
+  end
+
   def chocar(objeto_espacial)
 
     este_objeto_espacial_antes_de_chocar = (self.class).new(self.vida, self.masa)

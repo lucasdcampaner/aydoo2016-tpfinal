@@ -15,5 +15,4 @@ describe 'Nave' do
     expect(vida_obtenida).to eq vida_esperada
     expect(masa_obtenida).to eq masa_esperada
   end
-
 end
