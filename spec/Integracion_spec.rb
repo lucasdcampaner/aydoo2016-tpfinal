@@ -234,4 +234,28 @@ describe 'Distintos tipos de choque' do
     expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
   end
 
+  it 'Misil con misil: los dos misiles disminuyen su vida en 100 unidades' do
+    
+    vida_misil = 100
+    masa_misil = 100
+    misil_que_choca = Misil.new(vida_misil, masa_misil) 
+    misil_chocado = Misil.new(vida_misil, masa_misil) 
+    vida_misil_que_choca_esperada = 0
+    masa_misil_que_choca_esperada = 100
+    vida_misil_chocado_esperada = 0
+    masa_misil_chocado_esperada = 100
+
+    misil_que_choca.chocar(misil_chocado)
+    
+    vida_misil_que_choca_obtenida = misil_que_choca.vida
+    masa_misil_que_choca_obtenida = misil_que_choca.masa    
+    vida_misil_chocado_obtenida = misil_chocado.vida
+    masa_misil_chocado_obtenida = misil_chocado.masa     
+
+    expect(vida_misil_que_choca_obtenida).to eq vida_misil_que_choca_esperada
+    expect(masa_misil_que_choca_obtenida).to eq masa_misil_que_choca_esperada
+    expect(vida_misil_chocado_obtenida).to eq vida_misil_chocado_esperada
+    expect(masa_misil_chocado_obtenida).to eq masa_misil_chocado_esperada    
+  end
+
 end

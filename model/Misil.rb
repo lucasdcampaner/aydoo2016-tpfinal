@@ -14,6 +14,7 @@ class Misil
     @masa = masa
     @choques_posibles = Hash.new
     @choques_posibles[Nave] = EfectoDisminuirVida.new(100)
+    @choques_posibles[Misil] = EfectoDisminuirVida.new(100)
   end
 
   def chocar(objeto_espacial)
