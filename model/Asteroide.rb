@@ -8,7 +8,7 @@ class Asteroide < ObjetoEspacial
     
     @vida = vida    
     @masa = masa
-    @choques_posibles = Hash.new
+    @choques_posibles = Hash.new 
     @choques_posibles[Nave] = EfectoAumentarMasa.new(10)
     @choques_posibles[Misil] = EfectoNulo.new()
     @choques_posibles[Bomba] = EfectoNulo.new()

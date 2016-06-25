@@ -1,6 +1,6 @@
 class ObjetoEspacial
 
-  attr_accessor :vida, :masa
+  attr_accessor :vida, :masa, :choques_posibles
 
   @vida
   @masa
@@ -12,6 +12,7 @@ class ObjetoEspacial
     masa = 100
     @vida = vida    
     @masa = masa
+    @choques_posibles = Hash.new
   end
 
   def chocar(objeto_espacial)
@@ -23,6 +24,12 @@ class ObjetoEspacial
 
   def actualizar_por_choque(objeto_espacial)
     @choques_posibles[objeto_espacial.class].afectar_objeto(self, objeto_espacial)
+  end
+
+  def agregar_choque_posible(objeto_espacial, efecto)
+    if !@choques_posibles.include? objeto_espacial
+      @choques_posibles[objeto_espacial] = efecto.new()
+    end
   end
 
 end
