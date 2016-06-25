@@ -32,4 +32,10 @@ class ObjetoEspacial
     end
   end
 
+  def eliminar_choque_posible(objeto_espacial)
+    if @choques_posibles.include? objeto_espacial
+      @choques_posibles.delete(objeto_espacial)
+    end
+  end
+
 end
