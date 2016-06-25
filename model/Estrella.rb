@@ -1,4 +1,4 @@
-require_relative '../model/EfectoDisminuirVida'
+require_relative '../model/EfectoDisminuirVidaPorPorcentaje'
 
 class Estrella
 
@@ -9,7 +9,7 @@ class Estrella
     @vida = vida    
     @masa = masa
     @choques_posibles = Hash.new
-    @choques_posibles[Nave] = EfectoDisminuirVida.new(50)
+    @choques_posibles[Nave] = EfectoDisminuirVidaPorPorcentaje.new(100)
   end
 
   def chocar(objeto_espacial)
