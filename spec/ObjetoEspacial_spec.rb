@@ -85,4 +85,15 @@ describe 'ObjetoEspacial' do
 
     expect(esta_vivo).to eq false
   end
+  
+  it 'Deberia estar vivo el objeto cuando vida y masa son mayores a 0' do
+    
+    objeto_espacial = ObjetoEspacial.new()    
+    objeto_espacial.vida = 100
+    objeto_espacial.masa = 100
+
+    esta_vivo = objeto_espacial.esta_vivo?
+
+    expect(esta_vivo).to eq true
+  end
 end
