@@ -1,5 +1,11 @@
 class ObjetoEspacial
 
+  attr_accessor :vida, :masa
+
+  @vida
+  @masa
+  @choques_posibles
+
   def chocar(objeto_espacial)
 
     este_objeto_espacial_antes_de_chocar = (self.class).new(self.vida, self.masa)

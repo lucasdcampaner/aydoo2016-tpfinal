@@ -4,12 +4,6 @@ require_relative '../model/EfectoNulo'
 
 class Asteroide < ObjetoEspacial
 
-  attr_accessor :vida, :masa
-
-  @vida
-  @masa
-  @choques_posibles
-
   def initialize(vida, masa)     
     
     @vida = vida    

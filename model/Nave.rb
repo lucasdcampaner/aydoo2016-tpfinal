@@ -4,12 +4,6 @@ require_relative '../model/EfectoDisminuirVida'
 require_relative '../model/EfectoAumentarVida'
 
 class Nave < ObjetoEspacial
- 
-  attr_accessor :vida, :masa
-
-  @vida
-  @masa
-  @choques_posibles
 
   def initialize(vida, masa)     
     

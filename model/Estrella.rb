@@ -4,8 +4,6 @@ require_relative '../model/EfectoNulo'
 
 class Estrella < ObjetoEspacial
 
-  attr_accessor :vida, :masa
-
   def initialize(vida, masa)     
     
     @vida = vida    
