@@ -1,4 +1,5 @@
 require 'rspec' 
+require 'spec_helper'
 
 describe 'Distintos tipos de choque' do
 
