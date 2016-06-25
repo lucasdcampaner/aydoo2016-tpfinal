@@ -618,4 +618,28 @@ describe 'Distintos tipos de choque' do
     expect(vida_estrella_obtenida).to eq vida_estrella_esperada
     expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
   end
+
+  it 'Deberian las dos estrellas disminuir su vida a 0 cuando estrella choca con estrella' do
+    
+    vida_estrella = 100
+    masa_estrella = 100
+    estrella_que_choca = Estrella.new(vida_estrella, masa_estrella) 
+    estrella_chocada = Estrella.new(vida_estrella, masa_estrella) 
+    vida_estrella_que_choca_esperada = 0
+    masa_estrella_que_choca_esperada = 100
+    vida_estrella_chocada_esperada = 0
+    masa_estrella_chocada_esperada = 100
+
+    estrella_que_choca.chocar(estrella_chocada)
+    
+    vida_estrella_que_choca_obtenida = estrella_que_choca.vida
+    masa_estrella_que_choca_obtenida = estrella_que_choca.masa    
+    vida_estrella_chocada_obtenida = estrella_chocada.vida
+    masa_estrella_chocada_obtenida = estrella_chocada.masa     
+
+    expect(vida_estrella_que_choca_obtenida).to eq vida_estrella_que_choca_esperada
+    expect(masa_estrella_que_choca_obtenida).to eq masa_estrella_que_choca_esperada
+    expect(vida_estrella_chocada_obtenida).to eq vida_estrella_chocada_esperada
+    expect(masa_estrella_chocada_obtenida).to eq masa_estrella_chocada_esperada    
+  end
 end

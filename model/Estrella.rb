@@ -13,5 +13,6 @@ class Estrella < ObjetoEspacial
     @choques_posibles[Misil] = EfectoNulo.new()
     @choques_posibles[Bomba] = EfectoDisminuirVidaPorPorcentaje.new(100)
     @choques_posibles[Asteroide] = EfectoDisminuirVidaPorPorcentaje.new(100)
+    @choques_posibles[Estrella] = EfectoDisminuirVidaPorPorcentaje.new(100)
   end
 end
