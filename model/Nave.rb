@@ -1,9 +1,10 @@
+require_relative '../model/ObjetoEspacial'
 require_relative '../model/EfectoDisminuirMasa'
 require_relative '../model/EfectoDisminuirVida'
 require_relative '../model/EfectoAumentarVida'
 
-class Nave
-
+class Nave < ObjetoEspacial
+ 
   attr_accessor :vida, :masa
 
   @vida
@@ -21,16 +22,4 @@ class Nave
     @choques_posibles[Asteroide] = EfectoDisminuirMasa.new(50)
     @choques_posibles[Estrella] = EfectoAumentarVida.new()
   end
-
-  def chocar(objeto_espacial)
-
-    este_objeto_espacial_antes_de_chocar = (self.class).new(self.vida, self.masa)
-    @choques_posibles[objeto_espacial.class].afectar_objeto(self, objeto_espacial)
-    objeto_espacial.actualizar_por_choque(este_objeto_espacial_antes_de_chocar)
-  end
-
-  def actualizar_por_choque(objeto_espacial)
-    @choques_posibles[objeto_espacial.class].afectar_objeto(self, objeto_espacial)
-  end
-
 end
