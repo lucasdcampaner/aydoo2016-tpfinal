@@ -13,5 +13,6 @@ class Asteroide < ObjetoEspacial
     @choques_posibles[Misil] = EfectoNulo.new()
     @choques_posibles[Bomba] = EfectoNulo.new()
     @choques_posibles[Asteroide] = EfectoNulo.new()
+    @choques_posibles[Estrella] = EfectoNulo.new()
   end
 end
