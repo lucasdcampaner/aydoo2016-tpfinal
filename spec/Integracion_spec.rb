@@ -284,4 +284,30 @@ describe 'Distintos tipos de choque' do
     expect(masa_bomba_obtenida).to eq masa_bomba_esperada    
   end  
 
+  it 'Bomba con misil: el misil no registra efectos y la bomba la disminuye su vida a 50 unidades' do
+    
+    vida_misil = 100
+    masa_misil = 100
+    misil = Misil.new(vida_misil, masa_misil) 
+    vida_bomba = 100
+    masa_bomba = 100
+    bomba = Bomba.new(vida_bomba, masa_bomba) 
+    vida_misil_esperada = 100
+    masa_misil_esperada = 100
+    vida_bomba_esperada = 50
+    masa_bomba_esperada = 100
+
+    bomba.chocar(misil)
+    
+    vida_misil_obtenida = misil.vida
+    masa_misil_obtenida = misil.masa    
+    vida_bomba_obtenida = bomba.vida
+    masa_bomba_obtenida = bomba.masa    
+
+    expect(vida_misil_obtenida).to eq vida_misil_esperada
+    expect(masa_misil_obtenida).to eq masa_misil_esperada
+    expect(vida_bomba_obtenida).to eq vida_bomba_esperada
+    expect(masa_bomba_obtenida).to eq masa_bomba_esperada    
+  end
+
 end
