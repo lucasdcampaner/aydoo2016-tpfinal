@@ -1,4 +1,5 @@
 require_relative '../model/EfectoAumentarMasa'
+require_relative '../model/EfectoNulo'
 
 class Asteroide 
 
@@ -14,6 +15,7 @@ class Asteroide
     @masa = masa
     @choques_posibles = Hash.new
     @choques_posibles[Nave] = EfectoAumentarMasa.new(10)
+    @choques_posibles[Misil] = EfectoNulo.new()
   end
 
   def chocar(objeto_espacial)
