@@ -16,6 +16,7 @@ class Asteroide
     @choques_posibles = Hash.new
     @choques_posibles[Nave] = EfectoAumentarMasa.new(10)
     @choques_posibles[Misil] = EfectoNulo.new()
+    @choques_posibles[Bomba] = EfectoNulo.new()
   end
 
   def chocar(objeto_espacial)

@@ -17,6 +17,7 @@ class Bomba
     @choques_posibles[Nave] = EfectoDisminuirVida.new(100)
     @choques_posibles[Misil] = EfectoDisminuirVidaPorPorcentaje.new(50)
     @choques_posibles[Bomba] = EfectoDisminuirVida.new(100)
+    @choques_posibles[Asteroide] = EfectoDisminuirVidaPorPorcentaje.new(100)
   end
 
   def chocar(objeto_espacial)
