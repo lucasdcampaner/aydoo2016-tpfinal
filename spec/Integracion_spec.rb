@@ -29,6 +29,58 @@ describe 'Distintos tipos de choque' do
     expect(masa_nave_chocada_obtenida).to eq masa_nave_chocada_esperada    
   end
 
+  it 'Nave con misil: la nave disminuye su vida a 20 unidades y el misil a 0' do
+    
+    vida_nave = 100
+    masa_nave = 100
+    nave = Nave.new(vida_nave, masa_nave) 
+    vida_misil = 100
+    masa_misil = 100
+    misil = Misil.new(vida_misil, masa_misil) 
+    vida_nave_esperada = 20
+    masa_nave_esperada = 100
+    vida_misil_esperada = 0
+    masa_misil_esperada = 100
+
+    nave.chocar(misil)
+    
+    vida_nave_obtenida = nave.vida
+    masa_nave_obtenida = nave.masa    
+    vida_misil_obtenida = misil.vida
+    masa_misil_obtenida = misil.masa    
+
+    expect(vida_nave_obtenida).to eq vida_nave_esperada
+    expect(masa_nave_obtenida).to eq masa_nave_esperada
+    expect(vida_misil_obtenida).to eq vida_misil_esperada
+    expect(masa_misil_obtenida).to eq masa_misil_esperada    
+  end
+  
+  it 'Misil con nave: la nave disminuye su vida a 20 unidades y el misil a 0' do
+    
+    vida_nave = 100
+    masa_nave = 100
+    nave = Nave.new(vida_nave, masa_nave) 
+    vida_misil = 100
+    masa_misil = 100
+    misil = Misil.new(vida_misil, masa_misil) 
+    vida_nave_esperada = 20
+    masa_nave_esperada = 100
+    vida_misil_esperada = 0
+    masa_misil_esperada = 100
+
+    misil.chocar(nave)
+    
+    vida_nave_obtenida = nave.vida
+    masa_nave_obtenida = nave.masa    
+    vida_misil_obtenida = misil.vida
+    masa_misil_obtenida = misil.masa    
+
+    expect(vida_nave_obtenida).to eq vida_nave_esperada
+    expect(masa_nave_obtenida).to eq masa_nave_esperada
+    expect(vida_misil_obtenida).to eq vida_misil_esperada
+    expect(masa_misil_obtenida).to eq masa_misil_esperada    
+  end
+
   it 'Nave con asteroide: la nave disminuye su masa a 50 unidades y el asteroide la aumenta en 10' do
     
     vida_nave = 100
