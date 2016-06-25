@@ -414,4 +414,28 @@ describe 'Distintos tipos de choque' do
     expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
   end
 
+  it 'Bomba con bomba: la dos bombas disminuyen su vida en 100 unidades' do
+    
+    vida_bomba = 100
+    masa_bomba = 100
+    bomba_que_choca = Bomba.new(vida_bomba, masa_bomba) 
+    bomba_chocada = Bomba.new(vida_bomba, masa_bomba) 
+    vida_bomba_que_choca_esperada = 0
+    masa_bomba_que_choca_esperada = 100
+    vida_bomba_chocada_esperada = 0
+    masa_bomba_chocada_esperada = 100
+
+    bomba_que_choca.chocar(bomba_chocada)
+    
+    vida_bomba_que_choca_obtenida = bomba_que_choca.vida
+    masa_bomba_que_choca_obtenida = bomba_que_choca.masa    
+    vida_bomba_chocada_obtenida = bomba_chocada.vida
+    masa_bomba_chocada_obtenida = bomba_chocada.masa     
+
+    expect(vida_bomba_que_choca_obtenida).to eq vida_bomba_que_choca_esperada
+    expect(masa_bomba_que_choca_obtenida).to eq masa_bomba_que_choca_esperada
+    expect(vida_bomba_chocada_obtenida).to eq vida_bomba_chocada_esperada
+    expect(masa_bomba_chocada_obtenida).to eq masa_bomba_chocada_esperada    
+  end
+
 end
