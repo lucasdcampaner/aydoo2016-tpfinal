@@ -12,5 +12,6 @@ class Asteroide < ObjetoEspacial
     @choques_posibles[Nave] = EfectoAumentarMasa.new(10)
     @choques_posibles[Misil] = EfectoNulo.new()
     @choques_posibles[Bomba] = EfectoNulo.new()
+    @choques_posibles[Asteroide] = EfectoNulo.new()
   end
 end
