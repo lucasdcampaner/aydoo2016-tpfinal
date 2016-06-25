@@ -28,7 +28,7 @@ class ObjetoEspacial
 
   def agregar_choque_posible(objeto_espacial, efecto)
     if !@choques_posibles.include? objeto_espacial
-      @choques_posibles[objeto_espacial] = efecto.new()
+      @choques_posibles[objeto_espacial] = efecto
     end
   end
 
