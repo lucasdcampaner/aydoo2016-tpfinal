@@ -4,7 +4,7 @@ require_relative '../model/Bomba'
 
 describe 'Bomba' do
 
-  it 'deberia crear una bomba con 200 unidades de vida y 90 unidades de masa' do
+  it 'Deberia crear una bomba con 200 unidades de vida y 90 unidades de masa cuando se instancia' do
     
     vidaEsperada = 200
     masaEsperada = 90
@@ -16,5 +16,4 @@ describe 'Bomba' do
     expect(vidaEsperada).to eq vidaObtenida
     expect(masaEsperada).to eq masaObtenida
   end
-
 end

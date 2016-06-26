@@ -18,7 +18,7 @@ describe 'ObjetoEspacial' do
     expect(masa_obtenida).to eq masa_esperada
   end
 
-  it 'No deberia agregar el choque posible nave en los choques posibles' do
+  it 'Deberia no agregarse el choque posible nave en los choques posibles' do
     
     cantidad_choques_esperados = 1
     objeto_espacial = ObjetoEspacial.new() 

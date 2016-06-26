@@ -29,10 +29,9 @@ describe 'Excepciones' do
     objeto_espacial_que_choca = ObjetoEspacial.new() 
     objeto_espacial_que_chocado = ObjetoEspacial.new() 
     vida = 0
-	objeto_espacial_que_choca.vida = vida    
+    objeto_espacial_que_choca.vida = vida    
     objeto_espacial_que_chocado.vida = vida
 
     expect{objeto_espacial_que_choca.chocar(objeto_espacial_que_chocado)}.to raise_exception(ObjetoEspacialMuertoException)
   end
-
 end

@@ -4,7 +4,7 @@ require_relative '../model/Misil'
 
 describe 'Misil' do
 
-  it 'deberia crear un misil con 10 unidades de vida y 30 unidades de masa' do
+  it 'Deberia crear un misil con 10 unidades de vida y 30 unidades de masa cuando se instancia' do
     
     vidaEsperada = 10
     masaEsperada = 30
@@ -16,5 +16,4 @@ describe 'Misil' do
     expect(vidaEsperada).to eq vidaObtenida
     expect(masaEsperada).to eq masaObtenida
   end
-
 end
