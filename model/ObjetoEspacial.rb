@@ -1,3 +1,5 @@
+require_relative '../model/ObjetoEspacialMuertoException'
+
 class ObjetoEspacial
 
   attr_accessor :vida, :masa, :choques_posibles
@@ -17,6 +19,10 @@ class ObjetoEspacial
   end
 
   def chocar(objeto_espacial)
+
+    if !self.esta_vivo? || !objeto_espacial.esta_vivo?
+      raise ObjetoEspacialMuertoException, 'Los objetos espaciales muertos no pueden participar en choques.'
+    end
 
     este_objeto_espacial_antes_de_chocar = (self.class).new(self.vida, self.masa)
     @choques_posibles[objeto_espacial.class].afectar_objeto(self, objeto_espacial)
