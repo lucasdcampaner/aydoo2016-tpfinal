@@ -132,4 +132,30 @@ describe 'Ejemplos de prueba' do
     expect(vida_estrella_obtenida).to eq vida_estrella_esperada
     expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
   end
+  
+  it 'Deberia la bomba disminuir su vida a 0 unidades y el asteroide no registrar efectos cuando bomba choca con asteroide' do
+    
+    vida_bomba = 200
+    masa_bomba = 100
+    bomba = Bomba.new(vida_bomba, masa_bomba) 
+    vida_asteroide = 30
+    masa_asteroide = 100
+    asteroide = Asteroide.new(vida_asteroide, masa_asteroide) 
+    vida_bomba_esperada = 0
+    masa_bomba_esperada = 100
+    vida_asteroide_esperada = 30
+    masa_asteroide_esperada = 100
+
+    bomba.chocar(asteroide)
+    
+    vida_bomba_obtenida = bomba.vida
+    masa_bomba_obtenida = bomba.masa    
+    vida_asteroide_obtenida = asteroide.vida
+    masa_asteroide_obtenida = asteroide.masa    
+
+    expect(vida_bomba_obtenida).to eq vida_bomba_esperada
+    expect(masa_bomba_obtenida).to eq masa_bomba_esperada
+    expect(vida_asteroide_obtenida).to eq vida_asteroide_esperada
+    expect(masa_asteroide_obtenida).to eq masa_asteroide_esperada    
+  end
 end
