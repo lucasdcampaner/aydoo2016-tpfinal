@@ -1,4 +1,5 @@
 require_relative '../model/ObjetoEspacialMuertoException'
+require_relative '../model/ObjetoEspacialSinEfectoDefinidoException'
 
 class ObjetoEspacial
 
@@ -21,12 +22,16 @@ class ObjetoEspacial
   def chocar(objeto_espacial)
 
     if !self.esta_vivo? || !objeto_espacial.esta_vivo?
-      raise ObjetoEspacialMuertoException, 'Los objetos espaciales muertos no pueden participar en choques.'
+      fail ObjetoEspacialMuertoException.new
     end
-
-    este_objeto_espacial_antes_de_chocar = (self.class).new(self.vida, self.masa)
+    
+    if !self.esta_definido_el_choque?(objeto_espacial)
+      fail ObjetoEspacialSinEfectoDefinidoException.new
+    end
+    
+    este_objeto_espacial_antes_de_chocar = (self.class).new(self.vida, self.masa)  
     @choques_posibles[objeto_espacial.class].afectar_objeto(self, objeto_espacial)
-    objeto_espacial.actualizar_por_choque(este_objeto_espacial_antes_de_chocar)
+    objeto_espacial.actualizar_por_choque(este_objeto_espacial_antes_de_chocar) 
   end
 
   def actualizar_por_choque(objeto_espacial)
@@ -54,4 +59,14 @@ class ObjetoEspacial
     end
   end
 
+  def esta_definido_el_choque?(objeto_espacial)
+    
+    esta_definido = false
+    @choques_posibles.each do |choque_posible|
+      if choque_posible != nil
+        esta_definido = true
+      end    
+    end
+    esta_definido
+  end
 end

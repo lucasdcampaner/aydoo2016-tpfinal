@@ -1,3 +1,6 @@
 class ObjetoEspacialMuertoException < Exception
-  #Se define esta clase sin estado ni comportamiento particular para la claridad en el codigo.
+  
+  def initialize(msg='Los objetos espaciales muertos no pueden participar en choques.')
+    super
+  end
 end
