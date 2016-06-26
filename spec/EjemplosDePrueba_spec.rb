@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe 'Ejemplos de prueba' do
 
-  it 'Deberia la nave disminuir su masa a 50 unidades y el asteroide aumentarla en 10' do
+  it 'Deberia la nave disminuir su masa a 50 unidades y el asteroide aumentarla en 10 cuando nave choca con asteroide' do
     
     vida_nave = 100
     masa_nave = 100
@@ -29,4 +29,29 @@ describe 'Ejemplos de prueba' do
     expect(masa_asteroide_obtenida).to eq masa_asteroide_esperada    
   end
 
+  it 'Deberia la estrella no sufrir efectos y el misil tampoco cuando estrella choca con misil' do
+    
+    vida_misil = 10
+    masa_misil = 30
+    misil = Misil.new(vida_misil, masa_misil) 
+    vida_estrella = 50
+    masa_estrella = 10
+    estrella = Estrella.new(vida_estrella, masa_estrella) 
+    vida_misil_esperada = 10
+    masa_misil_esperada = 30
+    vida_estrella_esperada = 50
+    masa_estrella_esperada = 10
+
+    estrella.chocar(misil)
+    
+    vida_misil_obtenida = misil.vida
+    masa_misil_obtenida = misil.masa    
+    vida_estrella_obtenida = estrella.vida
+    masa_estrella_obtenida = estrella.masa    
+
+    expect(vida_misil_obtenida).to eq vida_misil_esperada
+    expect(masa_misil_obtenida).to eq masa_misil_esperada
+    expect(vida_estrella_obtenida).to eq vida_estrella_esperada
+    expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
+  end
 end
