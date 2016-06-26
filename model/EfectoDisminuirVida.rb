@@ -11,5 +11,4 @@ class EfectoDisminuirVida
      objeto_espacial_que_choca.vida = 0
     end 
   end
-
 end
