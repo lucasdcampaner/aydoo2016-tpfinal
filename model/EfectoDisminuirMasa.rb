@@ -1,4 +1,6 @@
-class EfectoDisminuirMasa
+require_relative '../model/Efecto'
+ 
+class EfectoDisminuirMasa < Efecto
 
   def initialize(porcentaje_disminucion)
 
@@ -10,5 +12,4 @@ class EfectoDisminuirMasa
     unidadesMasa = (objeto_espacial_chocado.masa * @porcentaje_disminucion / 100)
     objeto_espacial_que_choca.masa -= unidadesMasa
   end
-
 end

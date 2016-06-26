@@ -1,4 +1,6 @@
-class EfectoDisminuirVidaPorPorcentaje
+require_relative '../model/Efecto'
+
+class EfectoDisminuirVidaPorPorcentaje < Efecto
 
   def initialize(porcentaje_disminucion)
 

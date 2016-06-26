@@ -1,4 +1,6 @@
-class EfectoDisminuirVida
+require_relative '../model/Efecto'
+
+class EfectoDisminuirVida < Efecto
 
   def initialize(unidades_a_disminuir)
     @unidades_a_disminuir = unidades_a_disminuir

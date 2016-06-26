@@ -1,7 +1,4 @@
-class EfectoNulo
+require_relative '../model/Efecto'
 
-  #Este metodo existe y esta vacio para representar una situacion del dominio.
-  def afectar_objeto(objeto_espacial_que_choca, objeto_espacial_chocado)
-  end
-
+class EfectoNulo < Efecto
 end
