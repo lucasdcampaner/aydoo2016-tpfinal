@@ -54,4 +54,30 @@ describe 'Ejemplos de prueba' do
     expect(vida_estrella_obtenida).to eq vida_estrella_esperada
     expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
   end
+
+  it 'Deberian la bomba que choca disminuir su vida en 100 unidades y la bomba chocada quedar en 0 cuando chocan entre si' do
+    
+    vida_bomba_que_choca = 200
+    masa_bomba_que_choca = 90
+    bomba_que_choca = Bomba.new(vida_bomba_que_choca, masa_bomba_que_choca) 
+    vida_bomba_chocada = 20
+    masa_bomba_chocada = 45
+    bomba_chocada = Bomba.new(vida_bomba_chocada, masa_bomba_chocada) 
+    vida_bomba_que_choca_esperada = 100
+    masa_bomba_que_choca_esperada = 90
+    vida_bomba_chocada_esperada = 0
+    masa_bomba_chocada_esperada = 45
+
+    bomba_que_choca.chocar(bomba_chocada)
+    
+    vida_bomba_que_choca_obtenida = bomba_que_choca.vida
+    masa_bomba_que_choca_obtenida = bomba_que_choca.masa    
+    vida_bomba_chocada_obtenida = bomba_chocada.vida
+    masa_bomba_chocada_obtenida = bomba_chocada.masa     
+
+    expect(vida_bomba_que_choca_obtenida).to eq vida_bomba_que_choca_esperada
+    expect(masa_bomba_que_choca_obtenida).to eq masa_bomba_que_choca_esperada
+    expect(vida_bomba_chocada_obtenida).to eq vida_bomba_chocada_esperada
+    expect(masa_bomba_chocada_obtenida).to eq masa_bomba_chocada_esperada    
+  end
 end

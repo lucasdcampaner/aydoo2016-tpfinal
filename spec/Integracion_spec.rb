@@ -131,7 +131,7 @@ describe 'Distintos tipos de choque' do
     expect(masa_bomba_obtenida).to eq masa_bomba_esperada    
   end
 
-  it 'Nave con asteroide: la nave disminuye su masa a 50 unidades y el asteroide la aumenta en 10' do
+  it 'Deberia la nave disminuir su masa a 50 unidades y el asteroide aumentarla en 10 cuando nave choca con asteroide' do
     
     vida_nave = 100
     masa_nave = 100
@@ -389,7 +389,7 @@ describe 'Distintos tipos de choque' do
     expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
   end
 
-  it 'Estrella con misil: el misil no registra efectos y la estrella tampoco' do
+  it 'Deberia la estrella no sufrir efectos y el misil tampoco cuando estrella choca con misil' do
     
     vida_misil = 100
     masa_misil = 100
@@ -415,7 +415,7 @@ describe 'Distintos tipos de choque' do
     expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
   end
 
-  it 'Bomba con bomba: la dos bombas disminuyen su vida en 100 unidades' do
+  it 'Deberian las dos bombas disminuir su vida en 100 unidades cuando chocan entre si' do
     
     vida_bomba = 100
     masa_bomba = 100
