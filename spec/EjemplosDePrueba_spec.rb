@@ -1,7 +1,7 @@
 require 'rspec' 
 require 'spec_helper'
 
-describe 'Ejemplos de prueba' do
+describe 'Ejemplos de prueba de consigna' do
 
   it 'Deberia la nave disminuir su masa a 50 unidades y el asteroide aumentarla en 10 cuando nave choca con asteroide' do
     
