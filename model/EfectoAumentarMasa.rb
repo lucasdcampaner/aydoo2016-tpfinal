@@ -2,6 +2,8 @@ require_relative '../model/Efecto'
 
 class EfectoAumentarMasa < Efecto
 
+  @porcentaje_aumento
+
   def initialize(porcentaje_aumento)
     @porcentaje_aumento = porcentaje_aumento
   end
