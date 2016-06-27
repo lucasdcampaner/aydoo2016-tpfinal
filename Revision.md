@@ -40,6 +40,6 @@ SEGUNDA REVISION
 
 - Respuesta: No aceptado. Me parece algo positivo que cada objeto_espacial conozca que le pasa cuando choca con otro objeto_espacial. Si aparece un nuevo objeto espacial, el mismo puede agregarse como choque posible mediante el metodo agregar_choque_posible, algo parecido a lo que hace el patron observer cuando agrega un observador. Ademas esta clase nueva de objeto puede tener definida por defecto los choques con los objetos espaciales ya existentes.
 
-Observacion 4: en el diagrama de secuencia las flechas representan mensajes entre objetos. Cuando se lanza la excepcion, la nave le dice a la excepcion: ¡lanzate! Deberias poner throw, raise o algo que indique eso en lugar de escribir la causa de la excepcion, ya que eso no es un mensaje.
+- Observacion 4: en el diagrama de secuencia las flechas representan mensajes entre objetos. Cuando se lanza la excepcion, la nave le dice a la excepcion: ¡lanzate! Deberias poner throw, raise o algo que indique eso en lugar de escribir la causa de la excepcion, ya que eso no es un mensaje.
 
 - Respuesta: Aceptado. No puse el mensaje de ¡lanzate!, aunque lo que quize representar es que la excepcion le devuelve ese mensaje.
