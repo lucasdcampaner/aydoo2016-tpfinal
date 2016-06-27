@@ -61,11 +61,10 @@ class ObjetoEspacial
 
   def esta_definido_el_choque?(objeto_espacial)
     
-    esta_definido = false
-    @choques_posibles.each do |choque_posible|
-      if choque_posible != nil
-        esta_definido = true
-      end    
+    esta_definido = true
+
+    if @choques_posibles[objeto_espacial.class] == nil
+      esta_definido = false
     end
     esta_definido
   end
