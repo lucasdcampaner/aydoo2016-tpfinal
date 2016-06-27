@@ -35,6 +35,10 @@ class ObjetoEspacial
   end
 
   def actualizar_por_choque(objeto_espacial)
+    
+    if !self.esta_definido_el_choque?(objeto_espacial)
+      fail ObjetoEspacialSinEfectoDefinidoException.new
+    end
     @choques_posibles[objeto_espacial.class].afectar_objeto(self, objeto_espacial)
   end
 

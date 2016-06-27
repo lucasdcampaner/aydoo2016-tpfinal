@@ -1,6 +1,7 @@
 require 'rspec' 
 require 'spec_helper'
 require_relative '../model/ObjetoEspacial'
+require_relative '../model/EfectoNulo'
 
 describe 'Excepciones' do
 
@@ -41,6 +42,15 @@ describe 'Excepciones' do
     objeto_espacial_chocadodo = ObjetoEspacial.new() 
 
     expect{objeto_espacial_que_choca.chocar(objeto_espacial_chocadodo)}.to raise_exception(ObjetoEspacialSinEfectoDefinidoException)
+  end
+
+  it 'Deberia lanzar excepcion cuando el objeto que es chocado no tiene definido un efecto para el objeto' do
+    
+    nave = Nave.new(100, 100) 
+    asteroide = Asteroide.new(100, 100) 
+    asteroide.eliminar_choque_posible(Nave)
+
+    expect{nave.chocar(asteroide)}.to raise_exception(ObjetoEspacialSinEfectoDefinidoException)
   end
 
 end
