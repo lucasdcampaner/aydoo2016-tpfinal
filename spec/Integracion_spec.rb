@@ -648,13 +648,10 @@ describe 'Distintos tipos de choque' do
     vida_nave = 200
     masa_nave = 200
     nave = Nave.new(vida_nave, masa_nave) 
-    
     vida_agujero_negro = 100
     masa_agujero_negro = 100
     agujero_negro = AgujeroNegro.new(vida_agujero_negro, masa_agujero_negro) 
-    
     nave.agregar_choque_posible(AgujeroNegro, EfectoDisminuirVida.new(150))
-
     vida_nave_esperada = 50
     masa_nave_esperada = 200
 
@@ -668,6 +665,30 @@ describe 'Distintos tipos de choque' do
     expect(vida_nave_obtenida).to eq vida_nave_esperada
     expect(masa_nave_obtenida).to eq masa_nave_esperada    
     expect(vida_agujero_negro).to eq vida_agujero_negro
-    expect(masa_agujero_negro).to eq vida_agujero_negro
+    expect(masa_agujero_negro).to eq masa_agujero_negro
   end
+
+  it 'Estrella choca con nuevo objeto espacial agujero negro. La estrella se destruye y el agujero negro aumenta a su masa la de la estrella.' do
+    
+    vida_estrella = 200
+    masa_estrella = 200
+    estrella = Estrella.new(vida_estrella, masa_estrella) 
+    estrella.agregar_choque_posible(AgujeroNegro, EfectoDestruccionTotal.new())
+    vida_agujero_negro = 100
+    masa_agujero_negro = 100
+    agujero_negro = AgujeroNegro.new(vida_agujero_negro, masa_agujero_negro) 
+    vida_estrella_esperada = 0
+    masa_estrella_esperada = 0
+    masa_agujero_negro_esperada = 300
+
+    estrella.chocar(agujero_negro)
+    
+    vida_estrella_obtenida = estrella.vida
+    masa_estrella_obtenida = estrella.masa    
+    masa_agujero_negro_obtenida = agujero_negro.masa    
+
+    expect(vida_estrella_obtenida).to eq vida_estrella_esperada
+    expect(masa_estrella_obtenida).to eq masa_estrella_esperada    
+    expect(masa_agujero_negro_obtenida).to eq masa_agujero_negro_esperada
+  end  
 end
